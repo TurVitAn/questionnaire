@@ -1,6 +1,6 @@
 RSpec.describe Question, type: :model do
   subject(:question) { described_class.new }
-  
+
   context 'with associations' do
     it { is_expected.to belong_to(:step) }
     it { is_expected.to have_many(:possible_answers).dependent(:destroy) }

@@ -5,5 +5,5 @@ class Question < ApplicationRecord
 
   validates :value, presence: true
 
-  enum answer_type: {'STRING' => 0, 'INTEGER' => 1, 'RADIO' => 2, 'CHECKBOXES' => 3}
+  enum answer_type: { 'STRING' => 0, 'INTEGER' => 1, 'RADIO' => 2, 'CHECKBOXES' => 3 }
 end
