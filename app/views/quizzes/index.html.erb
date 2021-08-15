@@ -1,0 +1,13 @@
+<div class="text-center">
+  <h1 class="text-white text-3xl">Questionnaires</h1>
+</div>
+
+<div class="grid grid-cols-8 gap-4 my-12 bg-white rounded shadow-lg pt-10 pb-8">
+  <div class="col-span-6 col-start-2">
+    <ul>
+      <% @quizzes.each do |quiz| %>
+        <li><%= link_to quiz.name, quiz_show_path(quiz.slug) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
