@@ -7,13 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body class="bg-purple font-sans antialiased">
-  <div class="my-6 px-4">
-    <div class="mx-auto max-w-xl">
-      <%= yield %>
+    <div class="my-6 px-4">
+      <div class="mx-auto max-w-xl">
+        <%= yield %>
+      </div>
     </div>
-  </div>
   </body>
 </html>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get '/:slug(/:uid/step/:step_id)', to: 'quizzes#show', as: 'quiz_show'
-  get '/:slug/:uid/completed', to: 'quizzes#completed', as: 'quiz_completed'
-
   root 'quizzes#index'
+
+  resources :quizzes, param: :slug, only: %i[index show] do
+    member do
+      get ':uid/steps/:step_position', to: 'steps#show_questions'
+      post ':uid/steps/:step_position', to: 'steps#save_answers'
+      get 'completed'
+    end
+  end
 end

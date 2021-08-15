@@ -1,0 +1,16 @@
+<fieldset class="radio_buttons">
+  <%= collection_radio_buttons :questions, "#{question.id}", question.possible_answers.order(:position), :id, :value,
+                               { checked: answer_value(@result, question.id) } do |b| %>
+    <span class="radio">
+      <%= b.label(class: 'inline-flex items-center mr-4 mb-2 cursor-pointer text-sm text-gray-700') do
+          b.radio_button(class: 'form-radio mr-2 focus:outline-none is-invalid 
+                                 cursor-pointer text-blue-500 transition duration-150 
+                                 ease-in-out') + b.text
+        end %>
+    </span>
+  <% end %>
+</fieldset>
+
+<% if @validation_errors && @validation_errors[question.id.to_s] %>
+  <div class="text-sm text-red-400">You should choose one option</div>
+<% end %>

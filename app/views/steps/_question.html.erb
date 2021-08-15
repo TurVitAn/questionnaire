@@ -3,6 +3,6 @@
     <%= question.value %>
   </label>
 
-  <%= render "quizzes/answers_by_type/#{question.answer_type.downcase}",
-             possible_answers: question.possible_answers.order(:position) %>
+  <%= render "steps/answers_by_type/#{question.answer_type.downcase}", 
+             question: question %>
 </div>
